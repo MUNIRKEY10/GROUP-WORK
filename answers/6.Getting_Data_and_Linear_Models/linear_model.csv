@@ -1,0 +1,11 @@
+import pandas as pd
+import statsmodels.formula.api as smf
+
+# Create dummy data (or use the loaded data_frame)
+data = pd.DataFrame({'X': [1, 2, 3, 4, 5], 'Y': [2, 4, 5, 4, 5]})
+
+# Fit the linear model: Y is predicted by X
+model = smf.ols('Y ~ X', data=data).fit()
+
+# Print the model summary (coefficients, R-squared, etc.)
+print(model.summary())
